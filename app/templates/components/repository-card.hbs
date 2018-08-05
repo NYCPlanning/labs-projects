@@ -1,4 +1,4 @@
-<div class="transition mb-0 mt-0 group {{if expanded 'mb-3 mt-3'}} hover:shadow-md">
+<div class="transition mb-0 mt-0 group {{if expanded 'mb-3 mt-3 -ml-1 -mr-1'}} hover:shadow-md">
   <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
     <div class="group flex items-center">
       <div class="flex-1 flex flex-row items-center content-center">
@@ -12,23 +12,26 @@
       </div>
 
       <div class="flex-1 flex flex-row-reverse">
-        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+        <span class="repo-card">
           {{svg-jar "github-issues" class="mr-1"}} 
           {{model.open_issues}}
         </span>
-        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+        <span class="repo-card">
           {{svg-jar "github-stargazers" class="mr-1"}} 
           {{model.stargazers_count}}
         </span>
-        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+        <span class="repo-card">
           {{svg-jar "code" class="mr-1"}} 
           {{model.language}}
         </span>
-        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+        <span class="repo-card">
           {{svg-jar "fork" class="mr-1"}} 
           {{model.forks}}
         </span>
-        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+        <span class="repo-card">
+          {{or model.license.name 'Unknown'}}
+        </span>
+        <span class="repo-card">
           Last commit: {{moment-from-now model.pushed_at}}
         </span>
       </div>
