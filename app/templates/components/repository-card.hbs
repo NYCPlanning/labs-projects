@@ -1,4 +1,4 @@
-<div class="transition mb-0 mt-0 group {{if expanded 'mb-3 mt-3 -ml-1 -mr-1'}} hover:shadow-md">
+<div class="transition-fast mb-0 mt-0 group {{if expanded 'mb-3 mt-3 -ml-1 -mr-1'}} hover:shadow-md">
   <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
     <div class="group flex items-center">
       <div class="flex-1 flex flex-row items-center content-center">
@@ -6,7 +6,7 @@
           class="m-1" 
           src="https://circleci.com/gh/NYCPlanning/labs-zola.svg?style=svg"
         />
-        <span class="font-bold transition-faster group-hover:text-lg {{if expanded 'text-lg'}}">
+        <span class="font-bold transition-fast {{if expanded 'text-lg'}}">
           {{model.name}}
         </span>
       </div>
