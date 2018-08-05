@@ -59,7 +59,7 @@
           {{/if}}
 
           <span class="repo-card">
-            Last commit: {{moment-from-now model.pushed_at}}
+            {{svg-jar "commits" class="mr-1"}} {{moment-from-now model.pushed_at}}
           </span>
         </div>
       </div>
