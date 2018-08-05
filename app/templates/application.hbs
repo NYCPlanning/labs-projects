@@ -4,7 +4,11 @@
     <span class="font-thin text-4xl m-8">
       NYC Planning Labs Repository Dashboard
     </span>
+    <span>
+      {{spinkit-spinner loading=enrichmentState.isRunning}}
+    </span>
   </div>
+
   {{#each model as |repository|}}
     {{repository-card model=repository}}
   {{/each}}
