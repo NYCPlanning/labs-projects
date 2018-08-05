@@ -4,7 +4,8 @@
       <div class="flex-1 flex flex-row items-center content-center">
         <img 
           class="m-1" 
-          src="https://circleci.com/gh/NYCPlanning/labs-zola.svg?style=svg"
+          src="https://circleci.com/gh/NYCPlanning/{{model.name}}.svg?style=svg"
+          onerror={{action 'imageError'}}
         />
         <span class="font-bold transition-fast {{if expanded 'text-lg'}}">
           {{model.name}}

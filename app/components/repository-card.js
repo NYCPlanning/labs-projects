@@ -8,4 +8,10 @@ export default Component.extend({
   click() {
     this.toggleProperty('expanded');
   },
+
+  actions: {
+    imageError({ target }) {
+      target.src = '/svgs/circleci-unknown.svg';
+    },
+  },
 });
