@@ -31,6 +31,29 @@
         <span class="repo-card">
           {{or model.license.name 'Unknown'}}
         </span>
+        {{#if model.dependencies.ember-source}}
+          <span class="repo-card">
+            {{svg-jar "tomster" class="w-6 h-6"}}
+          </span>
+        {{/if}}
+
+        {{#if model.dependencies.express}}
+          <span class="repo-card">
+            {{svg-jar "node" class="w-6 h-6"}}
+          </span>
+        {{/if}}
+
+        {{#if model.dependencies.gatsby}}
+          <span class="repo-card">
+            {{svg-jar "gatsby" class="w-6 h-6"}}
+          </span>
+        {{/if}}
+
+        {{#if model.dependencies.react-dom}}
+          <span class="repo-card">
+            {{svg-jar "react" class="w-6 h-6"}}
+          </span>
+        {{/if}}
         <span class="repo-card">
           Last commit: {{moment-from-now model.pushed_at}}
         </span>
