@@ -17,5 +17,5 @@
 */
 
 .repo-card {
-  @apply .flex .flex-none .items-center .content-center .rounded .bg-agreeable-grey .m-1 .p-1 .text-grey-darker;
+  @apply .flex .flex-none .items-center .content-start .rounded .bg-agreeable-grey .m-1 .p-1 .text-grey-darker;
 }
