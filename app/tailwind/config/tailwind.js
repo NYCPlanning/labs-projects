@@ -83,7 +83,7 @@ export default {
     maxWidth: ['responsive'],
     minHeight: ['responsive'],
     minWidth: ['responsive'],
-    negativeMargin: ['responsive'],
+    negativeMargin: ['responsive', 'hover'],
     opacity: ['responsive'],
     overflow: ['responsive'],
     padding: ['responsive'],
