@@ -41,4 +41,10 @@ export default Route.extend({
       }
     }
   }).enqueue(),
+
+  actions: {
+    error() {
+      this.transitionTo('error');
+    }
+  }
 });
