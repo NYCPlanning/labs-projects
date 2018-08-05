@@ -5,7 +5,7 @@
       NYC Planning Labs Repository Dashboard
     </span>
   </div>
-  {{#each model.items as |repository|}}
+  {{#each model as |repository|}}
     {{repository-card model=repository}}
   {{/each}}
 </div>
