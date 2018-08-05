@@ -1,4 +1,10 @@
-<div class="flex-col bg-white p-2">
+<div class="flex-col bg-off-white p-8 text-off-black">
+  <div class="flex flex-1 items-center">
+    {{svg-jar 'github-square' class="ml-8 scale-4 opacity-25"}}
+    <span class="font-thin text-4xl m-8">
+      NYC Planning Labs Repository Dashboard
+    </span>
+  </div>
   {{#each model.items as |repository|}}
     {{repository-card model=repository}}
   {{/each}}

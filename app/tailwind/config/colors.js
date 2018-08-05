@@ -28,6 +28,8 @@ export default {
   white: '#ffffff',
 
   'off-white': '#fdfdfd',
+  'agreeable-grey': '#F1F1F1',
+  'off-black': '#676767',
 
   'red-darkest': '#3b0d0c',
   'red-darker': '#621b18',

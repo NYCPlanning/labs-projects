@@ -1,13 +1,33 @@
-<div class="transition mb-0 mt-0 {{if expanded 'mb-3 mt-3'}}">
+<div class="transition mb-0 mt-0 group {{if expanded 'mb-3 mt-3'}} hover:shadow-md">
   <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
-    <div class="flex">
-      <div class="flex-1">
-        {{svg-jar "github-square"}} {{repository-factoid label="" value=model.name}}
+    <div class="group flex items-center">
+      <div class="flex-1 flex flex-row items-center content-center">
+        <img 
+          class="m-1" 
+          src="https://circleci.com/gh/NYCPlanning/labs-zola.svg?style=svg"
+        />
+        <span class="font-bold transition group-hover:text-lg {{if expanded 'text-lg'}}">
+          {{model.name}}
+        </span>
       </div>
 
-      {{repository-factoid label="Open Issues" value=model.open_issues}}
-      <div class="text-center">
-        <a href={{model.html_url}} target="_blank">View</a>
+      <div class="flex-1 flex flex-row-reverse">
+        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+          {{svg-jar "github-issues" class="mr-1"}} 
+          {{model.open_issues}}
+        </span>
+        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+          {{svg-jar "github-stargazers" class="mr-1"}} 
+          {{model.stargazers_count}}
+        </span>
+        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+          {{svg-jar "code" class="mr-1"}} 
+          {{model.language}}
+        </span>
+        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+          {{svg-jar "fork" class="mr-1"}} 
+          {{model.forks}}
+        </span>
       </div>
     </div>
   </div>
@@ -15,7 +35,6 @@
   {{#if expanded}}
     <div class="flex bg-off-white border border-b-0 p-3">
       {{repository-factoid label="Default Branch" value=model.default_branch}}
-      {{repository-factoid label="Language" value=model.language}}
       {{repository-factoid label="Last Push" value=model.pushed_at}}
     </div>
     <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
