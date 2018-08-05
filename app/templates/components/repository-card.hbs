@@ -6,7 +6,7 @@
           class="m-1" 
           src="https://circleci.com/gh/NYCPlanning/labs-zola.svg?style=svg"
         />
-        <span class="font-bold transition group-hover:text-lg {{if expanded 'text-lg'}}">
+        <span class="font-bold transition-faster group-hover:text-lg {{if expanded 'text-lg'}}">
           {{model.name}}
         </span>
       </div>
@@ -28,6 +28,9 @@
           {{svg-jar "fork" class="mr-1"}} 
           {{model.forks}}
         </span>
+        <span class="flex flex-none items-center content-center rounded bg-agreeable-grey m-1 p-1 text-grey-darker">
+          Last commit was {{moment-from-now model.pushed_at}}
+        </span>
       </div>
     </div>
   </div>
@@ -35,7 +38,6 @@
   {{#if expanded}}
     <div class="flex bg-off-white border border-b-0 p-3">
       {{repository-factoid label="Default Branch" value=model.default_branch}}
-      {{repository-factoid label="Last Push" value=model.pushed_at}}
     </div>
     <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
       More Stuff
