@@ -1,1 +1,7 @@
-{{outlet}}
+<div class="flex-col bg-white p-2">
+  {{#each model.items as |repository|}}
+    {{repository-card model=repository}}
+  {{/each}}
+</div>
+
+{{output}}

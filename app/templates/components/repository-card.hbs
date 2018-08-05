@@ -1,0 +1,25 @@
+<div class="transition mb-0 mt-0 {{if expanded 'mb-3 mt-3'}}">
+  <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
+    <div class="flex">
+      <div class="flex-1">
+        {{svg-jar "github-square"}} {{repository-factoid label="" value=model.name}}
+      </div>
+
+      {{repository-factoid label="Open Issues" value=model.open_issues}}
+      <div class="text-center">
+        <a href={{model.html_url}} target="_blank">View</a>
+      </div>
+    </div>
+  </div>
+
+  {{#if expanded}}
+    <div class="flex bg-off-white border border-b-0 p-3">
+      {{repository-factoid label="Default Branch" value=model.default_branch}}
+      {{repository-factoid label="Language" value=model.language}}
+      {{repository-factoid label="Last Push" value=model.pushed_at}}
+    </div>
+    <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
+      More Stuff
+    </div>
+  {{/if}}
+</div>
