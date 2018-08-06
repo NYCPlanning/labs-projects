@@ -20,5 +20,5 @@
 }
 
 .drawer {
-    will-change: transform;
+    will-change: transform, margin;
 }
