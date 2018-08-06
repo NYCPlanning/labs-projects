@@ -44,6 +44,8 @@ export default Route.extend({
 
   actions: {
     error() {
+      // this does not work yet - the model hook needs to 
+      // use a try except block to handle the async await
       this.transitionTo('error');
     }
   }
