@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import object from '@ember/object';
+import { inject as service } from '@ember/service';
 import { task, timeout } from 'ember-concurrency';
 import fetch from 'fetch';
 
@@ -10,10 +11,19 @@ const GITHUB_USER = 'nycplanning';
 const TOTAL_SEARCHES = 5;
 
 export default Route.extend({
+  notifier: service(),
+
   async model() {
-    const { resources: { search: { remaining, reset } } } = await fetch(`${HOST}/rate_limit`).then(blob => blob.json());
+    const { 
+      resources: { 
+        search: { 
+          remaining, reset 
+        } 
+      }
+    } = await fetch(`${HOST}/rate_limit`).then(blob => blob.json());
 
     if (remaining < TOTAL_SEARCHES) {
+      this.get('notifier').info('Waiting for GitHub rate limit to reset...');
       await timeout((reset * 1000) - Date.now());
     }
 

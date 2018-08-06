@@ -30,3 +30,5 @@
 * box with Tailwind.
 */
 @import "./utilities/*.css";
+
+@import 'ember-notifier';
