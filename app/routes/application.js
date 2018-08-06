@@ -1,14 +1,23 @@
 import Route from '@ember/routing/route';
 import object from '@ember/object';
-import { task } from 'ember-concurrency';
+import { task, timeout } from 'ember-concurrency';
 import fetch from 'fetch';
 
-export const HOST = 'https://api.github.com/search';
-export const GITHUB_USER = 'nycplanning';
+const HOST = 'https://api.github.com';
+const GITHUB_USER = 'nycplanning';
+
+// can't be more than 10
+const TOTAL_SEARCHES = 5;
 
 export default Route.extend({
   async model() {
-    const { items: repositories } = await fetch(`${HOST}/repositories?q=org:${GITHUB_USER}%20topic:labs&per_page=100`)
+    const { resources: { search: { remaining, reset } } } = await fetch(`${HOST}/rate_limit`).then(blob => blob.json());
+
+    if (remaining < TOTAL_SEARCHES) {
+      await timeout((reset * 1000) - Date.now());
+    }
+
+    const { items: repositories } = await fetch(`${HOST}/search/repositories?q=org:${GITHUB_USER}%20topic:labs&per_page=100`)
       .then(blob => blob.json());
 
     return repositories
@@ -28,7 +37,7 @@ export default Route.extend({
   },
 
   enrichDataTask: task(function * (model, dependency) {
-    const { items } = yield fetch(`${HOST}/code?q=${dependency}+in%3Afile+filename%3Apackage.json%20org:nycplanning`)
+    const { items } = yield fetch(`${HOST}/search/code?q=${dependency}+in%3Afile+filename%3Apackage.json%20org:nycplanning`)
       .then(blob => blob.json());
     const repository_ids = items.map(({ repository: { id } }) => id);
 
