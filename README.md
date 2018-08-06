@@ -16,7 +16,7 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * `cd labs-project-dashboard`
-* `npm install`
+* `yarn install`
 
 ## Running / Development
 
@@ -35,8 +35,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Linting
 
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+* `yarn run lint:js`
+* `yarn run lint:js --fix`
 
 ### Building
 
@@ -45,7 +45,11 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+Deploy with Dokku:
+* Create Dokku remote: `git remote add dokku dokku@{domain}:projects`
+* Push to Dokku master: `git push dokku master`
+
+
 
 ## Further Reading / Useful Links
 
