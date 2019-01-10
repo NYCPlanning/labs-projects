@@ -21,6 +21,26 @@ module.exports = function(environment) {
       duration: 60000,
     },
 
+    fontawesome: {
+      icons: {
+        'free-solid-svg-icons': [
+          'thumbs-up',
+          'thumbs-down',
+          'equals',
+          'greater-than',
+          'less-than',
+          'code-branch',
+          'plus',
+          'bug',
+          'tag',
+          'question'
+        ],
+        'free-brands-svg-icons': [
+          'github'
+        ]
+      }
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

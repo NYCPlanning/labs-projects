@@ -1,17 +1,19 @@
-<div class="flex-col p-8">
-  <div class="flex flex-1 items-center">
-    {{svg-jar 'github-square' class="ml-8 scale-4 opacity-25"}}
-    <span class="font-thin text-4xl m-8">
-      NYC Planning Labs Repository Dashboard
-    </span>
+<div class="p-3">
+
+  <h2>
+    <img src="https://raw.githubusercontent.com/NYCPlanning/logo/master/dcp_logo_772.png" class="site-logo" alt="NYC Planning">
+    <span class="site-logo--l">L</span><span class="site-logo--a">a</span><span class="site-logo--b">b</span><span class="site-logo--s">s</span> Dashboard
     <span>
       {{spinkit-spinner loading=enrichmentState.isRunning}}
     </span>
-  </div>
+  </h2>
 
-  {{#each model as |project|}}
-    {{project-card model=project}}
-  {{/each}}
+  <table class="w-full mt-4 text-sm">
+    {{#each model as |project|}}
+      {{project-card model=project}}
+    {{/each}}
+  </table>
+
 </div>
 
 {{output}}

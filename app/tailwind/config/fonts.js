@@ -36,7 +36,7 @@ export default {
     'serif'
   ],
   mono: [
-    'Menlo',
+    // 'Menlo',
     'Monaco',
     'Consolas',
     'Liberation Mono',

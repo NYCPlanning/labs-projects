@@ -16,6 +16,13 @@
 }
 */
 
-.repo-card {
-  @apply .flex .flex-none .items-center .content-start .text-grey-darkest;
+a { @apply .no-underline .text-blue-dark; }
+a:hover { @apply .text-blue-darker; }
+
+.site-logo {
+  height: 1.1em;
+  width: auto;
+  display: inline-block;
+  float: left;
+  margin-right: 0.625rem;
 }
