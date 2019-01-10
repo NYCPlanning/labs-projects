@@ -4502,6 +4502,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+kebab-case@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kebab-case/-/kebab-case-1.0.0.tgz#3f9e4990adcad0c686c0e701f7645868f75f91eb"
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -5032,6 +5036,10 @@ map-cache@^0.2.2:
 map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
+
+map-obj@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-3.0.0.tgz#4221cc62360f88c0735f9e7c0813bd889657f490"
 
 map-visit@^1.0.0:
   version "1.0.0"

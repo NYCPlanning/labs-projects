@@ -2,76 +2,22 @@
   <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
     <div class="group flex items-center">
       <div class="flex-1 flex flex-row items-center content-center">
-        <img 
-          class="m-1" 
+        {{!-- <img
+          class="m-1"
           src="https://circleci.com/gh/NYCPlanning/{{model.name}}.svg?style=svg"
           onerror={{action 'imageError'}}
-        />
+        /> --}}
         <span class="font-bold">
-          {{model.name}}
+          {{model.id}}
+          {{log model.widgetData.0.attributes}}
+          {{#if model.widgetData.0.attributes}}
+            <small>Master {{model.widgetData.0.attributes.master.status}} {{model.widgetData.0.attributes.master.ahead_by}} {{model.widgetData.0.attributes.master.behind_by}}
+
+            Develop {{model.widgetData.0.attributes.develop.status}} {{model.widgetData.0.attributes.develop.ahead_by}} {{model.widgetData.0.attributes.develop.behind_by}}</small>
+          {{/if}}
         </span>
       </div>
 
-      <div class="flex-1">
-        <div class="flex flex-row-reverse justify-between flex-no-grow">
-          <span class="repo-card">
-            {{svg-jar "github-issues" class="mr-1"}} 
-            {{model.open_issues}}
-          </span>
-          <span class="repo-card">
-            {{svg-jar "github-stargazers" class="mr-1"}} 
-            {{model.stargazers_count}}
-          </span>
-          <span class="repo-card">
-            {{svg-jar "code" class="mr-1"}} 
-            {{model.language}}
-          </span>
-          <span class="repo-card">
-            {{svg-jar "fork" class="mr-1"}} 
-            {{model.forks}}
-          </span>
-          <span class="repo-card">
-            {{svg-jar "license" class="mr-1"}}
-            {{or model.license.name 'Unknown'}}
-          </span>
-          {{#if model.dependencies.ember-source}}
-            <span class="repo-card">
-              {{svg-jar "tomster" class="w-6 h-6"}}
-            </span>
-          {{/if}}
-
-          {{#if model.dependencies.express}}
-            <span class="repo-card">
-              {{svg-jar "node" class="w-6 h-6"}}
-            </span>
-          {{/if}}
-
-          {{#if model.dependencies.gatsby}}
-            <span class="repo-card">
-              {{svg-jar "gatsby" class="w-6 h-6"}}
-            </span>
-          {{/if}}
-
-          {{#if model.dependencies.react-dom}}
-            <span class="repo-card">
-              {{svg-jar "react" class="w-6 h-6"}}
-            </span>
-          {{/if}}
-
-          <span class="repo-card">
-            {{svg-jar "commits" class="mr-1"}} {{moment-from-now model.pushed_at}}
-          </span>
-        </div>
-      </div>
     </div>
   </div>
-
-  {{#if expanded}}
-    <div class="flex bg-off-white border border-b-0 p-3">
-      {{repository-factoid label="Default Branch" value=model.default_branch}}
-    </div>
-    <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
-      More Stuff
-    </div>
-  {{/if}}
 </div>

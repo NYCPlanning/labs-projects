@@ -56,6 +56,8 @@
   "dependencies": {
     "animate.css": "3.7.0",
     "glhd-tailwindcss-transitions": "0.3.0",
+    "kebab-case": "^1.0.0",
+    "map-obj": "^3.0.0",
     "tailwindcss-plugins": "0.1.1",
     "tailwindcss-transition": "1.0.5"
   }
