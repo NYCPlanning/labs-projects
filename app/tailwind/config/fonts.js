@@ -18,7 +18,9 @@
 
 export default {
   sans: [
-    'Montserrat',
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
     'sans-serif',
   ],
   serif: [
