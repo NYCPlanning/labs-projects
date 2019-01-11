@@ -10,22 +10,4 @@
 {{branch-widget model=model}}
 
 {{!-- Issues Widget --}}
-<td class="issues border-t border-light-gray">
-  <ul class="effort-impact-matrix list-reset mr-4 text-xs">
-    <li class="luxury font-bold text-white text-center p-1">42</li>
-    <li class="strategic font-bold text-white text-center p-1">0</li>
-    <li class="easy-win font-bold text-white text-center p-1">1</li>
-    <li class="high-roi font-bold text-white text-center p-1">18</li>
-  </ul>
-  <div class="issues--bugs whitespace-no-wrap">
-    {{fa-icon 'bug' fixedWidth=true transform='shrink-4' class='text-red'}}
-    3
-  </div>
-  <div class="issues--untagged whitespace-no-wrap">
-    <span class="fa-layers fa-fw">
-      {{fa-icon 'tag' fixedWidth=true class='text-orange-lighter'}}
-      {{fa-icon 'question' fixedWidth=true class='text-orange-light' transform='shrink-9 rotate-45'}}
-    </span>
-    7
-  </div>
-</td>
+{{issue-widget model=model}}
