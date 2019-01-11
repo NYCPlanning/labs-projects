@@ -18,6 +18,7 @@
 */
 
 export default {
+  xxs: '0.5rem', // 8px
   xs: '0.625rem', // 10px
   sm: '.75rem', // 12px
   base: '1rem', // 16px

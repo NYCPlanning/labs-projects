@@ -24,21 +24,25 @@ module.exports = function(environment) {
     fontawesome: {
       icons: {
         'free-solid-svg-icons': [
-          'thumbs-up',
-          'thumbs-down',
+          'ban',
+          'bug',
+          'check',
+          'code-branch',
           'equals',
           'greater-than',
           'less-than',
-          'code-branch',
           'plus',
-          'bug',
-          'tag',
           'question',
-          'ban',
-          'sync'
+          'star',
+          'sync',
+          'tag',
+          'times',
+          'thumbs-up',
+          'thumbs-down',
         ],
         'free-brands-svg-icons': [
-          'github'
+          'ember',
+          'github',
         ]
       }
     },

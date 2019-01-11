@@ -2,8 +2,43 @@
   {{if firstRepo projectName}}
 </td>
 
-<td class="repo-name font-mono {{unless firstRepo 'border-t border-light-gray'}}">
+<td class="repo-name font-mono border-t border-grey-light leading-normal">
   <a href="https://github.com/NYCPlanning/{{model.id}}" target="_blank">{{fa-icon 'github' prefix='fab'}}/{{model.id}}</a>
+  <div class="repo-meta text-xs text-grey-dark">
+    <strong class="inline-block repo-meta--stars">
+      {{fa-icon 'star' transform='shrink-4'}}
+      525,600{{!-- TODO: pull in star count --}}
+    </strong>
+
+    <span class="text-grey-light">|</span>
+
+    <strong class="inline-block repo-meta--forks">
+      {{fa-icon 'code-branch' transform='shrink-4'}}
+      42{{!-- TODO: pull in fork count --}}
+    </strong>
+
+    <span class="text-grey-light">|</span>
+
+    <strong class="inline-block repo-meta--ember-v">
+      {{fa-icon 'ember' prefix='fab' transform='grow-10 down-3'}}
+      3.3{{!-- TODO: pull in ember version --}}
+    </strong>
+
+    <span class="text-grey-light">|</span>
+
+    <strong class="inline-block repo-meta--ember-v">
+      <span class="montserrat text-xxs">Labs UI</span>
+      0.0.15{{!-- TODO: pull in Labs UI version --}}
+    </strong>
+
+    <span class="text-grey-light">|</span>
+
+    <strong class="inline-block repo-meta--ember-v">
+      <span class="montserrat text-xxs">EMC</span>
+      0.0.23{{!-- TODO: pull in Ember Mapbox Composer version --}}
+    </strong>
+
+  </div>
 </td>
 
 {{!-- Branch Widget --}}
@@ -11,3 +46,6 @@
 
 {{!-- Issues Widget --}}
 {{issue-widget model=model}}
+
+{{!-- Pull Request Widget --}}
+{{pr-widget model=model}}

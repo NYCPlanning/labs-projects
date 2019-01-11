@@ -3,6 +3,15 @@
   {{site-header}}
 
   <table class="w-full mt-2 text-sm">
+    <thead>
+      <tr>
+        <th class="text-grey-dark text-left">Product</th>
+        <th class="text-grey-dark text-left">Repository</th>
+        <th class="text-grey-dark">Branches</th>
+        <th class="text-grey-dark">Issues</th>
+        <th class="text-grey-dark">PR</th>
+      </tr>
+    </thead>
     {{#each model as |project|}}
       {{project-card model=project}}
     {{/each}}

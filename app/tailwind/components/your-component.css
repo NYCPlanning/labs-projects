@@ -19,6 +19,11 @@
 a { @apply .no-underline .text-blue-dark; }
 a:hover { @apply .text-blue-darker; }
 
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.05em;
+}
+
 .site-logo {
   height: 0.75em;
   width: auto;
