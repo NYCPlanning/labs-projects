@@ -7,54 +7,10 @@
 </td>
 
 {{!-- Branch Widget --}}
-<td class="leading-tight text-right {{unless firstRepo 'border-t border-light-gray'}}">
-  <span class="branch-status whitespace-no-wrap text-green-dark">
-    {{#if true}}{{!-- TODO: add boolean for if tests pass --}}
-      {{fa-icon 'thumbs-up' transform='shrink-3 up-2'}}
-    {{else}}
-      {{fa-icon 'thumbs-down' transform='shrink-3 down-2'}}
-    {{/if}}
-    <span class="branch-name font-bold font-mono">master</span>
-  </span>
-  <span class="branch-meta whitespace-no-wrap text-grey-dark block">
-    <span class="branch-date text-xs">01/02/19</span>
-    <span class="branch-diff inline-block ml-2">
-      {{fa-icon 'plus' transform='shrink-6'}}{{model.widgetData.0.attributes.master.ahead_by}}
-    </span>
-  </span>
-</td>
-<td class="leading-tight text-center p-0 {{unless firstRepo 'border-t border-light-gray'}}">
-  {{#if (eq model.widgetData.0.attributes.master.status 'identical')}}
-    {{fa-icon 'equals' transform='shrink-6' fixedWidth=true class='text-grey-light'}}
-  {{else if (eq model.widgetData.0.attributes.master.status 'ahead')}}
-    {{fa-icon 'greater-than' transform='shrink-6' fixedWidth=true class='text-grey-dark'}}
-  {{else if (eq model.widgetData.0.attributes.master.status 'behind')}}
-    {{fa-icon 'less-than' transform='shrink-6' fixedWidth=true class='text-grey-dark'}}
-  {{else}}
-    {{fa-icon 'code-branch' transform='shrink-3' fixedWidth=true class='text-red'}}
-  {{/if}}
-</td>
-<td class="leading-tight {{unless firstRepo 'border-t border-light-gray'}}">
-  <span class="branch inline-block align-middle">
-    <span class="branch-status whitespace-no-wrap text-red-dark">
-      <span class="branch-name font-bold font-mono">develop</span>
-      {{#if false}}{{!-- TODO: add boolean for if tests pass --}}
-        {{fa-icon 'thumbs-up' transform='shrink-3 up-2'}}
-      {{else}}
-        {{fa-icon 'thumbs-down' transform='shrink-3 down-2'}}
-      {{/if}}
-    </span>
-    <span class="branch-meta whitespace-no-wrap text-grey-dark block">
-      <span class="branch-diff inline-block mr-2">
-        {{fa-icon 'plus' transform='shrink-6'}}{{model.widgetData.0.attributes.develop.ahead_by}}
-      </span>
-      <span class="branch-date text-xs">01/02/19</span>
-    </span>
-  </span>
-</td>
+{{branch-widget model=model}}
 
 {{!-- Issues Widget --}}
-<td class="issues {{unless firstRepo 'border-t border-light-gray'}}">
+<td class="issues border-t border-light-gray">
   <ul class="effort-impact-matrix list-reset mr-4 text-xs">
     <li class="luxury font-bold text-white text-center p-1">42</li>
     <li class="strategic font-bold text-white text-center p-1">0</li>

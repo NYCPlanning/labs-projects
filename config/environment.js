@@ -33,7 +33,8 @@ module.exports = function(environment) {
           'plus',
           'bug',
           'tag',
-          'question'
+          'question',
+          'ban'
         ],
         'free-brands-svg-icons': [
           'github'
