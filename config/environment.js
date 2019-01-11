@@ -34,7 +34,8 @@ module.exports = function(environment) {
           'bug',
           'tag',
           'question',
-          'ban'
+          'ban',
+          'sync'
         ],
         'free-brands-svg-icons': [
           'github'

@@ -1,14 +1,8 @@
 <div class="p-3">
 
-  <h2>
-    <img src="https://raw.githubusercontent.com/NYCPlanning/logo/master/dcp_logo_772.png" class="site-logo" alt="NYC Planning">
-    <span class="site-logo--l">L</span><span class="site-logo--a">a</span><span class="site-logo--b">b</span><span class="site-logo--s">s</span> Dashboard
-    <span>
-      {{spinkit-spinner loading=enrichmentState.isRunning}}
-    </span>
-  </h2>
+  {{site-header}}
 
-  <table class="w-full mt-4 text-sm">
+  <table class="w-full mt-2 text-sm">
     {{#each model as |project|}}
       {{project-card model=project}}
     {{/each}}

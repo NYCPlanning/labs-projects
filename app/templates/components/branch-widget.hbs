@@ -15,7 +15,7 @@
       </span>
     </span>
   {{/if}}
-</span>{{removWhitespace ~}}
+</span>{{removeWhitespace ~}}
 <span class="branch inline-block align-middle text-center p-1">
   {{#if (eq model.widgetData.0.attributes.master.status 'identical')}}
     {{fa-icon 'equals' transform='shrink-6' fixedWidth=true class='text-grey-light'}}
@@ -28,7 +28,7 @@
   {{else}}
     {{fa-icon 'ban' transform='shrink-3' fixedWidth=true class='text-red'}}
   {{/if}}
-</span>{{removWhitespace ~}}
+</span>{{removeWhitespace ~}}
 <span class="branch inline-block w-20 align-middle text-left">
   {{#if model.widgetData.0.attributes.develop}}{{!-- TODO: check if branch exists --}}
     <span class="branch-status whitespace-no-wrap">

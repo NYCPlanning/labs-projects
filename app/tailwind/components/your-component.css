@@ -20,9 +20,30 @@ a { @apply .no-underline .text-blue-dark; }
 a:hover { @apply .text-blue-darker; }
 
 .site-logo {
-  height: 1.1em;
+  height: 0.75em;
   width: auto;
   display: inline-block;
-  float: left;
-  margin-right: 0.625rem;
+  vertical-align: baseline;
+  /* position: relative; */
+  /* top: 0.1em; */
+}
+
+.site-logo--link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: #ae561f;
+}
+.site-logo--link:hover {
+  color: #8b4519;
+}
+
+.site-logo--l {
+}
+.site-logo--a {
+  margin-right: -0.05em;
+}
+.site-logo--b {
+  margin-right: -0.03em;
+}
+.site-logo--s {
 }
