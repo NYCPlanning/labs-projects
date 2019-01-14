@@ -14,7 +14,7 @@ import backgroundSize from './background-size';
 import borderWidths from './border-widths';
 import borderColors from './border-colors';
 import borderRadius from './border-radius';
-import width from './width';
+// import width from './width';
 import height from './height';
 import minWidth from './min-width';
 import minHeight from './min-height';
