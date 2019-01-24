@@ -33,16 +33,3 @@ jobs:
 
       # run tests!
       - run: yarn test
-
-      # deploy
-      - run:
-          name: Avoid hosts unknown for github
-          command: ssh-keyscan planninglabs.nyc >> ~/.ssh/known_hosts
-      - deploy:
-          name: Deployment
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git remote add dokku dokku@planninglabs.nyc:projects && git push dokku master
-            elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
-              git remote add dokku dokku@planninglabs.nyc:projects-staging && git push dokku develop:master
-            fi
