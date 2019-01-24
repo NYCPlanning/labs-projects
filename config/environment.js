@@ -44,7 +44,8 @@ module.exports = function(environment) {
           'ember',
           'github',
         ]
-      }
+      },
+      host: 'http://localhost:3000'
     },
 
     APP: {
@@ -53,13 +54,6 @@ module.exports = function(environment) {
     }
   };
 
-  if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-  }
 
   if (environment === 'test') {
     // Testem prefers this...
@@ -74,7 +68,11 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.host = 'https://home-api.planninglabs.nyc';
+  }
+
+  if (environment === 'staging') {
+    ENV.host = 'https://home-api-staging.planninglabs.nyc';
   }
 
   return ENV;
