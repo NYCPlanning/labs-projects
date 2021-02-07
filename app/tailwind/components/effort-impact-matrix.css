@@ -1,0 +1,16 @@
+.effort-impact-matrix {
+  min-width: 7em
+}
+
+.luxury,
+.strategic,
+.easy-win,
+.high-roi {
+  width: 3.375em;
+  float: left;
+}
+.easy-win { clear: left; }
+.luxury { background-color: #bb00bb; }
+.strategic { background-color: #6600bb; }
+.easy-win { background-color: #bb0066; }
+.high-roi { background-color: #660066; }

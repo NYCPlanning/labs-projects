@@ -1,0 +1,8 @@
+{{#each model.repos as |repo index|}}
+  {{repository-card
+    model=repo
+    projectName=model.id
+    projectStatus=model.status
+    firstRepo=(eq index 0)
+  }}
+{{/each}}

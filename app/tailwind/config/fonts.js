@@ -18,7 +18,9 @@
 
 export default {
   sans: [
-    'Montserrat',
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
     'sans-serif',
   ],
   serif: [
@@ -34,7 +36,7 @@ export default {
     'serif'
   ],
   mono: [
-    'Menlo',
+    // 'Menlo',
     'Monaco',
     'Consolas',
     'Liberation Mono',

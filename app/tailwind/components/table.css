@@ -1,0 +1,11 @@
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  @apply .p-1;
+}
+
+th {
+  @apply .text-xs font-normal .uppercase;
+}

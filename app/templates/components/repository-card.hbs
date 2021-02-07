@@ -1,77 +1,51 @@
-<div class="drawer transition-fast mb-0 mt-0 group {{if expanded 'mb-3 mt-3 -ml-1 -mr-1'}} hover:-ml-1 hover:mr-1">
-  <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
-    <div class="group flex items-center">
-      <div class="flex-1 flex flex-row items-center content-center">
-        <img 
-          class="m-1" 
-          src="https://circleci.com/gh/NYCPlanning/{{model.name}}.svg?style=svg"
-          onerror={{action 'imageError'}}
-        />
-        <span class="font-bold">
-          {{model.name}}
-        </span>
-      </div>
+<td class="product-name font-bold text-lg">
+  {{if firstRepo projectName}}
+</td>
 
-      <div class="flex-1">
-        <div class="flex flex-row-reverse justify-between flex-no-grow">
-          <span class="repo-card">
-            {{svg-jar "github-issues" class="mr-1"}} 
-            {{model.open_issues}}
-          </span>
-          <span class="repo-card">
-            {{svg-jar "github-stargazers" class="mr-1"}} 
-            {{model.stargazers_count}}
-          </span>
-          <span class="repo-card">
-            {{svg-jar "code" class="mr-1"}} 
-            {{model.language}}
-          </span>
-          <span class="repo-card">
-            {{svg-jar "fork" class="mr-1"}} 
-            {{model.forks}}
-          </span>
-          <span class="repo-card">
-            {{svg-jar "license" class="mr-1"}}
-            {{or model.license.name 'Unknown'}}
-          </span>
-          {{#if model.dependencies.ember-source}}
-            <span class="repo-card">
-              {{svg-jar "tomster" class="w-6 h-6"}}
-            </span>
-          {{/if}}
+<td class="repo-name font-mono border-t border-grey-light leading-normal">
+  <a href="https://github.com/NYCPlanning/{{model.id}}" target="_blank">{{fa-icon 'github' prefix='fab'}}/{{model.id}}</a>
+  <div class="repo-meta text-xs text-grey-dark">
+    <strong class="inline-block repo-meta--stars">
+      {{fa-icon 'star' transform='shrink-4'}}
+      525,600{{!-- TODO: pull in star count --}}
+    </strong>
 
-          {{#if model.dependencies.express}}
-            <span class="repo-card">
-              {{svg-jar "node" class="w-6 h-6"}}
-            </span>
-          {{/if}}
+    <span class="text-grey-light">|</span>
 
-          {{#if model.dependencies.gatsby}}
-            <span class="repo-card">
-              {{svg-jar "gatsby" class="w-6 h-6"}}
-            </span>
-          {{/if}}
+    <strong class="inline-block repo-meta--forks">
+      {{fa-icon 'code-branch' transform='shrink-4'}}
+      42{{!-- TODO: pull in fork count --}}
+    </strong>
 
-          {{#if model.dependencies.react-dom}}
-            <span class="repo-card">
-              {{svg-jar "react" class="w-6 h-6"}}
-            </span>
-          {{/if}}
+    <span class="text-grey-light">|</span>
 
-          <span class="repo-card">
-            {{svg-jar "commits" class="mr-1"}} {{moment-from-now model.pushed_at}}
-          </span>
-        </div>
-      </div>
-    </div>
+    <strong class="inline-block repo-meta--ember-v">
+      {{fa-icon 'ember' prefix='fab' transform='grow-10 down-3'}}
+      3.3{{!-- TODO: pull in ember version --}}
+    </strong>
+
+    <span class="text-grey-light">|</span>
+
+    <strong class="inline-block repo-meta--ember-v">
+      <span class="montserrat text-xxs">Labs UI</span>
+      0.0.15{{!-- TODO: pull in Labs UI version --}}
+    </strong>
+
+    <span class="text-grey-light">|</span>
+
+    <strong class="inline-block repo-meta--ember-v">
+      <span class="montserrat text-xxs">EMC</span>
+      0.0.23{{!-- TODO: pull in Ember Mapbox Composer version --}}
+    </strong>
+
   </div>
+</td>
 
-  {{#if expanded}}
-    <div class="flex bg-off-white border border-b-0 p-3">
-      {{repository-factoid label="Default Branch" value=model.default_branch}}
-    </div>
-    <div class="bg-white cursor-pointer border border-b-0 p-3 shadow">
-      More Stuff
-    </div>
-  {{/if}}
-</div>
+{{!-- Branch Widget --}}
+{{branch-widget model=model}}
+
+{{!-- Issues Widget --}}
+{{issue-widget model=model}}
+
+{{!-- Pull Request Widget --}}
+{{pr-widget model=model}}

@@ -17,6 +17,9 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "@fortawesome/ember-fontawesome": "^0.1.9",
+    "@fortawesome/free-brands-svg-icons": "^5.6.3",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.0.0",
@@ -45,7 +48,6 @@
     "ember-notifier": "0.0.1",
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.0.0",
-    "ember-svg-jar": "1.2.1",
     "ember-truth-helpers": "2.0.0",
     "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember": "^5.0.0",
@@ -57,6 +59,8 @@
   "dependencies": {
     "animate.css": "3.7.0",
     "glhd-tailwindcss-transitions": "0.3.0",
+    "kebab-case": "^1.0.0",
+    "map-obj": "^3.0.0",
     "tailwindcss-plugins": "0.1.1",
     "tailwindcss-transition": "1.0.5"
   }

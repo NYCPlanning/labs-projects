@@ -1,0 +1,49 @@
+<span class="branch inline-block w-20 text-right align-middle">
+  {{#if model.widgetData.0.attributes.master}}{{!-- TODO: check if branch exists --}}
+    <span class="branch-status whitespace-no-wrap">
+      {{#if true}}{{!-- TODO: add boolean for if tests pass --}}
+        {{fa-icon 'thumbs-up' transform='shrink-3 up-2' class='text-green-dark'}}
+      {{else}}
+        {{fa-icon 'thumbs-down' transform='shrink-3 down-2' class='text-red-dark'}}
+      {{/if}}
+      <span class="branch-name font-bold font-mono">master</span>
+    </span>
+    <span class="branch-meta whitespace-no-wrap text-grey-dark block">
+      <span class="branch-date text-xs">01/02/19</span>{{!-- TODO: get last commit date --}}
+      <span class="branch-diff inline-block ml-1">
+        {{fa-icon 'plus' transform='shrink-6'}}{{model.widgetData.0.attributes.master.ahead_by}}
+      </span>
+    </span>
+  {{/if}}
+</span>{{removeWhitespace ~}}
+<span class="branch inline-block align-middle text-center p-1">
+  {{#if (eq model.widgetData.0.attributes.master.status 'identical')}}
+    {{fa-icon 'equals' transform='shrink-6' fixedWidth=true class='text-grey-light'}}
+  {{else if (eq model.widgetData.0.attributes.master.status 'ahead')}}
+    {{fa-icon 'greater-than' transform='shrink-6' fixedWidth=true class='text-grey-dark'}}
+  {{else if (eq model.widgetData.0.attributes.master.status 'behind')}}
+    {{fa-icon 'less-than' transform='shrink-6' fixedWidth=true class='text-grey-dark'}}
+  {{else if (eq model.widgetData.0.attributes.master.status 'diverged')}}
+    {{fa-icon 'code-branch' transform='shrink-3' fixedWidth=true class='text-red'}}
+  {{else}}
+    {{fa-icon 'ban' transform='shrink-3' fixedWidth=true class='text-red'}}
+  {{/if}}
+</span>{{removeWhitespace ~}}
+<span class="branch inline-block w-20 align-middle text-left">
+  {{#if model.widgetData.0.attributes.develop}}{{!-- TODO: check if branch exists --}}
+    <span class="branch-status whitespace-no-wrap">
+      <span class="branch-name font-bold font-mono">develop</span>
+      {{#if false}}{{!-- TODO: add boolean for if tests pass --}}
+        {{fa-icon 'thumbs-up' transform='shrink-3 up-2' class='text-green-dark'}}
+      {{else}}
+        {{fa-icon 'thumbs-down' transform='shrink-3 down-2' class='text-red-dark'}}
+      {{/if}}
+    </span>
+    <span class="branch-meta whitespace-no-wrap text-grey-dark block">
+      <span class="branch-diff inline-block mr-1">
+        {{fa-icon 'plus' transform='shrink-6'}}{{model.widgetData.0.attributes.develop.ahead_by}}
+      </span>
+      <span class="branch-date text-xs">01/02/19</span>{{!-- TODO: get last commit date --}}
+    </span>
+  {{/if}}
+</span>

@@ -21,19 +21,40 @@ module.exports = function(environment) {
       duration: 60000,
     },
 
+    fontawesome: {
+      icons: {
+        'free-solid-svg-icons': [
+          'ban',
+          'bug',
+          'check',
+          'code-branch',
+          'equals',
+          'greater-than',
+          'less-than',
+          'plus',
+          'question',
+          'star',
+          'sync',
+          'tag',
+          'times',
+          'thumbs-up',
+          'thumbs-down',
+        ],
+        'free-brands-svg-icons': [
+          'ember',
+          'github',
+        ]
+      },
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    host: 'http://localhost:4000',
   };
 
-  if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-  }
 
   if (environment === 'test') {
     // Testem prefers this...
@@ -48,7 +69,11 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.host = 'https://home-api.planninglabs.nyc';
+  }
+
+  if (environment === 'staging') {
+    ENV.host = 'https://home-api-staging.planninglabs.nyc';
   }
 
   return ENV;
